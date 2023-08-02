@@ -4,3 +4,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+#myCheckbox {
+    margin-left: 20px;
+}
+
+#delete {
+    margin-left: 3px;
+    padding-inline: 18px;
+}
