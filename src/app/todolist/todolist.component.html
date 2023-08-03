@@ -21,11 +21,24 @@
         name="task"
         required
       />
-      <small *ngIf="taskForm.invalid && taskForm.dirty" id="emailHelp" class="form-text text-danger">Require task</small>
+      <small
+        *ngIf="taskForm.invalid && taskForm.dirty"
+        id="emailHelp"
+        class="form-text text-danger"
+        >Require task</small
+      >
     </div>
-    <button id="submitButton" type="submit" class="btn btn-primary" [disabled]="taskForm.invalid">
-      Submit
-    </button>
+
+    <div class="btn-holder">
+      <button
+        id="submitButton"
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="taskForm.invalid"
+      >
+        Submit
+      </button>
+    </div>
 
     <table class="table">
       <thead>
@@ -37,13 +50,20 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor ="let t of taskArray; index as i ">
-          <td>{{i+1}}</td>
-          <td>{{t.taskName}}</td>
-          <td><input (change)="onCheck(i)" id="myCheckbox" type="checkbox" /></td>
+        <tr *ngFor="let t of taskArray; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ t.taskName }}</td>
           <td>
-            <button id="delete" class="btn btn-danger btn-sm" (click)="onDelete(i)" type="button">
-              <fa-icon [icon]="trash"></fa-icon> 
+            <input (change)="onCheck(i)" id="myCheckbox" type="checkbox" />
+          </td>
+          <td>
+            <button
+              id="delete"
+              class="btn btn-danger btn-sm"
+              (click)="onDelete(i)"
+              type="button"
+            >
+              <fa-icon [icon]="trash"></fa-icon>
             </button>
           </td>
         </tr>

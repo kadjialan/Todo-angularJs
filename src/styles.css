@@ -1,15 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Mulish:wght@200;300&family=Oswald:wght@300&display=swap");
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
 }
 
 #myCheckbox {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 #delete {
-    margin-left: 3px;
-    padding-inline: 18px;
+  margin-left: 3px;
+  padding-inline: 18px;
+}
+
+#submitButton {
+  margin: 15px 0;
+  align-self: center;
+  width: 70%;
+  font-size: 20px;
+}
+
+.btn-holder {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 2px;
 }
