@@ -19,27 +19,30 @@
         placeholder="Enter task"
         ngModel
         name="task"
+        required
       />
-      <small id="emailHelp" class="form-text text-danger">Require task</small>
+      <small *ngIf="taskForm.invalid && taskForm.dirty" id="emailHelp" class="form-text text-danger">Require task</small>
     </div>
-    <button id="submitButton" type="submit" class="btn btn-primary">
+    <button id="submitButton" type="submit" class="btn btn-primary" [disabled]="taskForm.invalid">
       Submit
     </button>
 
     <table class="table">
       <thead>
         <tr>
+          <th scope="col">No</th>
           <th scope="col">Task</th>
           <th scope="col">Archieve</th>
           <th scope="col">Delete</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor ="let t of taskArray">
+        <tr *ngFor ="let t of taskArray; index as i ">
+          <td>{{i+1}}</td>
           <td>{{t.taskName}}</td>
-          <td><input id="myCheckbox" type="checkbox" /></td>
+          <td><input (change)="onCheck(i)" id="myCheckbox" type="checkbox" /></td>
           <td>
-            <button id="delete" class="btn btn-danger btn-sm">
+            <button id="delete" class="btn btn-danger btn-sm" (click)="onDelete(i)" type="button">
               <fa-icon [icon]="trash"></fa-icon> 
             </button>
           </td>
